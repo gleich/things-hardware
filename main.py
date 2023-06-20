@@ -16,16 +16,17 @@ def main():
         for _ in range(9):
             microdotphat.scroll_vertical()
             microdotphat.show()
-            time.sleep(0.05)
+            time.sleep(0.02)
         time.sleep(5)
         for _ in range(9):
             microdotphat.scroll_vertical(-1)
             microdotphat.show()
-            time.sleep(0.05)
+            time.sleep(0.02)
+        microdotphat.clear()
 
 
 def get_api_token():
-    with open("token.txt") as token_file:
+    with open("/home/matt/things-hardware/token.txt") as token_file:
         token = token_file.read().removesuffix("\n")
         return token
 
