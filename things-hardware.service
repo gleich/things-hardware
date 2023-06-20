@@ -1,0 +1,15 @@
+[Unit]
+Description=Things 3 Hardware Display
+
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/matt/things-hardware/main.py
+Restart=always
+RestartSec=5
+KillMode=process
+User=matt
+
+[Install]
+WantedBy=multi-user.target
