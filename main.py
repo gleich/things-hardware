@@ -10,9 +10,10 @@ def main():
         todos = get_todos(token)
         (count_done_text, percent_done) = gen_count_done_text(todos["today_todos"])
         if percent_done == 100:
-            microdotphat.write_string("DONE!")
+            microdotphat.write_string("DONE!", kerning=False)
             microdotphat.show()
             time.sleep(10)
+            continue
         create_progress_bar(percent_done)
         microdotphat.write_string(count_done_text, offset_y=9, kerning=False)
         microdotphat.show()
