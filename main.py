@@ -6,7 +6,7 @@ import microdotphat
 def main():
     microdotphat.set_rotate180(True)
     token = get_api_token()
-    animation_sleep_time = 0.00
+    animation_sleep_time = 0.005
     while True:
         todos = get_todos(token)
         (count_done_text, percent_done) = gen_count_done_text(todos["today_todos"])
@@ -18,6 +18,7 @@ def main():
         create_progress_bar(percent_done)
         microdotphat.write_string(count_done_text, offset_y=9, kerning=False)
         microdotphat.show()
+        todos = get_todos(token)
         time.sleep(4)
         for _ in range(9):
             microdotphat.scroll_vertical()
